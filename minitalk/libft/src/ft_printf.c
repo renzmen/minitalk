@@ -34,16 +34,16 @@ int	ft_case(va_list arg, char chr)
 	else if (chr == 'p')
 	{
 		len += ft_putstr("0x");
-		len += ft_puthexa(va_arg(arg, unsigned long),  "0123456789abcdef");
+		len += ft_puthexa(va_arg(arg, unsigned long), "0123456789abcdef");
 	}
 	return (len);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list arg;
-	int i;
-	int len;
+	va_list	arg;
+	int		i;
+	int		slen;
 
 	len = 0;
 	i = 0;

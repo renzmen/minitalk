@@ -12,22 +12,22 @@
 
 #include "../includes/libft.h"
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
-    write(1, &c, 1);
-    return (1);
+	write(1, &c, 1);
+	return (1);
 }
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-    int len;
+	int	len;
 
-    len = 0;
+	len = 0;
 	if (!str)
 		return (len += ft_putstr("(null)"));
-    while (str[len])
+	while (str[len])
 		len += ft_putchar(str[len]);
-    return (len);
+	return (len);
 }
 
 int	ft_puthexa(unsigned long n, char *hex)
@@ -43,7 +43,7 @@ int	ft_puthexa(unsigned long n, char *hex)
 
 int	ft_putuns(unsigned int nbr)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (nbr > 9)
@@ -54,7 +54,7 @@ int	ft_putuns(unsigned int nbr)
 
 int	ft_putnbr(int nbr)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (nbr == -2147483648)

@@ -23,6 +23,8 @@
 # define GREEN "\033[0;32m"
 # define BLUE "\033[0;34m"
 # define YELLOW "\033[0;33m"
+# define PURPLE "\033[35m"
+# define CYAN "\033[36m"
 # define END "\033[0m"
 
 typedef struct s_list
@@ -65,13 +67,13 @@ char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int    ft_printf(const char *str, ...);
-int    ft_case(va_list arg, char chr);
-int    ft_putchar(char c);
-int    ft_putstr(char *str);
-int    ft_puthexa(unsigned long n, char *hex);
-int    ft_putuns(unsigned int nbr);
-int    ft_putnbr(int nbr);
+int		ft_printf(const char *str, ...);
+int		ft_case(va_list arg, char chr);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_puthexa(unsigned long n, char *hex);
+int		ft_putuns(unsigned int nbr);
+int		ft_putnbr(int nbr);
 
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);

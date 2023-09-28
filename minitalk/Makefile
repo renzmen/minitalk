@@ -27,32 +27,25 @@ LIBRARIES	= -L./libft -lft
 all: $(NAME)
 
 $(NAME):  $(LIBFT) server client 
-	@echo "111"
 
 $(LIBFT):
 	(cd $(LIBFT_DIR) && make)
-	@echo "222"
 
 server: $(OBJ_DIR)server.o $(LIBFT)
 	gcc $(CFLAGS) $(OBJ_DIR)server.o -o server  $(INCLUDES) $(LIBRARIES)
-	@echo "333"
 
 client: $(OBJ_DIR)client.o $(LIBFT)
 	gcc $(CFLAGS) $(OBJ_DIR)client.o -o client  $(INCLUDES) $(LIBRARIES)
-	@echo "444"
 
 $(OBJ_DIR)%o: $(SRC_DIR)%c
 	gcc $(CFLAGS) -c $< -o $@ $(INCLUDES)
-	@echo "555"
 
 clean:
 	(cd $(LIBFT_DIR) && make clean)
 	rm -f $(OBJS)
-	@echo "666"
 
 fclean: clean
 	(cd $(LIBFT_DIR) && make fclean)
 	rm -f server client
-	@echo "777"
 	
 re: fclean all
