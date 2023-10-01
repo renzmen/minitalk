@@ -47,11 +47,11 @@ int	main(int argc, char **argv)
 	{
 		pid = ft_atoi(argv[1]);
 		i = 0;
-		signal(SIGUSR1, sigHandler);
+		signal(SIGUSR1, sig_handler);
 		ft_printf("%ssending text...\n%s", YELLOW, END);
 		while (argv[2][i])
-			sendText(pid, argv[2][i++]);
-		sendText(pid, '\0');
+			send_text(pid, argv[2][i++]);
+		send_text(pid, '\0');
 	}
 	return (0);
 }

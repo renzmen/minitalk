@@ -62,7 +62,7 @@ int	main(void)
 	pid = getpid();
 	ft_printf("%d", pid);
 	display_banner(pid);
-	server.sa_sigaction = sigHandler;
+	server.sa_sigaction = sig_handler;
 	server.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &server, 0);
 	sigaction(SIGUSR2, &server, 0);

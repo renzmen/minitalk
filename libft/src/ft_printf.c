@@ -43,7 +43,7 @@ int	ft_printf(const char *str, ...)
 {
 	va_list	arg;
 	int		i;
-	int		slen;
+	int		len;
 
 	len = 0;
 	i = 0;
