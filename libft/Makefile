@@ -6,7 +6,7 @@
 #    By: lrenzett <lrenzett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 16:07:59 by lrenzett          #+#    #+#              #
-#    Updated: 2023/09/20 02:39:05 by lrenzett         ###   ########.fr        #
+#    Updated: 2023/10/31 00:49:00 by lrenzett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ OBJS		= $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 #############
 all: $(NAME)
 
+$(shell mkdir -p $(OBJ_DIR))
+
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
@@ -45,6 +47,7 @@ $(OBJ_DIR)%o: $(SRC_DIR)%c
 
 clean:
 	rm -f $(OBJS)
+	-rmdir $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lrenzett <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: lrenzett <lrenzett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 02:28:23 by lrenzett          #+#    #+#              #
-#    Updated: 2023/09/23 00:47:35 by lrenzett         ###   ########.fr        #
+#    Updated: 2023/10/31 00:48:40 by lrenzett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,8 @@ all: $(NAME)
 
 $(NAME):  $(LIBFT) server client 
 
+$(shell mkdir -p $(OBJ_DIR))
+
 $(LIBFT):
 	(cd $(LIBFT_DIR) && make)
 
@@ -43,6 +45,7 @@ $(OBJ_DIR)%o: $(SRC_DIR)%c
 clean:
 	(cd $(LIBFT_DIR) && make clean)
 	rm -f $(OBJS)
+	-rmdir $(OBJ_DIR)
 
 fclean: clean
 	(cd $(LIBFT_DIR) && make fclean)
